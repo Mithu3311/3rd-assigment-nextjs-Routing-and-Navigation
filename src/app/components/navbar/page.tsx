@@ -1,41 +1,25 @@
-import Link from "next/link";
+'use client'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
 const Navbar = () => {
+    const Route = useRouter()
   return (
     <>
-      <div className="bg-blue-950 h-14 flex text-yellow-300 justify-between items-center">
-        <h1 className="ml-6 text-3xl">This is a Navbar Page</h1>
-        <ul className="mr-6 flex">
-          <li className="mr-6 hover:text-white">
-            <Link href="/">
-              <button>Home</button>
-            </Link>
-          </li>
-          <li className="mr-6 hover:text-white">
-            <Link href="/components/about">
-              <button>About</button>
-            </Link>
-          </li>
-          <li className="mr-6 hover:text-white">
-            <Link href="/components/contact">
-              <button>Contact</button>
-            </Link>
-          </li>
-          <li className="mr-6 hover:text-white">
-            <Link href="/components/footer">
-              <button>Footer</button>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="bg-slate-400 h-screen">
-        <div className="bg-slate-400 h-screen"></div>
-        <h1 className="text-blue-950 text-center bg-slate-400">
-          <u>© All Copy Right Reserved! Made By Mithu</u>
-        </h1>
-      </div>
+    <div className='bg-blue-950 h-14 flex justify-between items-center text-yellow-300'>
+      <h1 className='text-3xl'>This is a Navbar Page</h1>
+      <ul>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/')}>Home</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/about')}>About</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/contact')}>Contact</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/footer')}>Footer</button>
+      </ul>
+    </div>
+    <div className='bg-orange-100 text-center h-screen'>
+    <a href="https://github.com/Mithu3311" target='_blank'><u className='text-blue-950'>©All Right Reserved! Made By <b>MITHU</b></u></a>
+    </div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,43 +1,25 @@
-import Link from "next/link";
+'use client'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
 const Footer = () => {
+    const Route = useRouter()
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <div className="bg-blue-950 h-40 flex text-yellow-300 justify-between items-center mt-80">
-        <h1 className="ml-6 text-3xl">This is a Footer Page</h1>
-        <ul className="mr-6">
-          <li className="mr-80 mt-2 hover:text-white">
-            <Link href="/">
-              <button>Home</button>
-            </Link>
-          </li>
-          <li className="mr-80 mt-2 hover:text-white">
-            <Link href="/components/about">
-              <button>About</button>
-            </Link>
-          </li>
-          <li className="mr-80 mt-2 hover:text-white">
-            <Link href="/components/contact">
-              <button>Contact</button>
-            </Link>
-          </li>
-          <li className="mr-80 mt-2 hover:text-white">
-            <Link href="/components/navbar">
-              <button>Navbar</button>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="bg-slate-400">
-        <h1 className="text-blue-950 text-center">
-          <u>© All Copy Right Reserved! Made By Mithu</u>
-        </h1>
-      </div>
+    <div className='bg-blue-950 h-14 flex justify-between items-center text-yellow-300'>
+      <h1 className='text-3xl'>This is a Footer Page</h1>
+      <ul>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/')}>Home</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/about')}>About</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/contact')}>Contact</button>
+        <button className='mr-6 hover:text-white' onClick={() => Route.push('/components/navbar')}>Navbar</button>
+      </ul>
+    </div>
+    <div className='bg-orange-100 text-center h-screen'>
+    <a href="https://github.com/Mithu3311" target='_blank'><u className='text-blue-950'>©All Right Reserved! Made By <b>MITHU</b></u></a>
+    </div>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
